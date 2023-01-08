@@ -1,0 +1,13 @@
+@import '@/css/fonts.scss';
+
+body {
+  background-image: linear-gradient(to right bottom, #01539f, #007cbf, #00a0bf, #00c1a2, #64dc79);
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: 'Nunito';
+  font-size: 30px;
+}
