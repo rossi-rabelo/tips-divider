@@ -2,6 +2,8 @@ import { defineStore } from 'pinia'
 import axios from '@/resources/axios'
 import { convertToBRL } from '@/resources/queries'
 
+import { roundValue } from '@/utils/mathUtils'
+
 export const useTipsStore = defineStore({
   id: 'tips',
   state: () => ({
@@ -33,9 +35,9 @@ export const useTipsStore = defineStore({
   actions: {
     calculateTipsResult () {
       this.result.account = this.entry.value
-      this.result.tip = (this.entry.value * this.entry.tipValue / 100)
-      this.result.total = (this.result.account + this.result.tip)
-      this.result.amountPerPerson = (this.result.total / this.entry.dividers)
+      this.result.tip = roundValue(this.entry.value * this.entry.tipValue / 100)
+      this.result.total = roundValue(this.result.account + this.result.tip)
+      this.result.amountPerPerson = roundValue(this.result.total / this.entry.dividers)
 
       this.searchBrlValue()
     },
