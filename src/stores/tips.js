@@ -49,7 +49,7 @@ export const useTipsStore = defineStore({
       this.loadingConversion = true
 
       const { data } = await axios.post('/graphql', query)
-      this.result.totalBrl = this.result.amountPerPerson / data.data.currencyConversion.conversions[0].rate
+      this.result.totalBrl = roundValue(this.result.amountPerPerson / data.data.currencyConversion.conversions[0].rate)
 
       this.loadingConversion = false
     }
