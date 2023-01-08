@@ -1,5 +1,5 @@
 <template>
-  <div class="le-tip-view column items-center">
+  <div class="le-tip-view column items-center no-wrap">
     <h1 class="le-tip-view__title full-width text-center">Le/Tip</h1>
 
     <div class="le-tip-view__content row">
@@ -25,8 +25,8 @@
 </template>
 
 <script setup>
-import entryPanel from "@/components/panels/EntryPanel.vue";
-import resultPanel from "@/components/panels/ResultPanel.vue";
+import EntryPanel from "@/components/panels/EntryPanel.vue";
+import ResultPanel from "@/components/panels/ResultPanel.vue";
 
 import { ref, computed } from "vue";
 
